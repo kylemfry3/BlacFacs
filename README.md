@@ -1,5 +1,5 @@
 ### CS 3311/LMC 3432 ###
-Mobile application implementation by JDF 2356
+### Mobile application implementation by JDF 2356 ###
 - Kyle Fry
 - Zachary (Joe) Wilmot
 - Adeja Mann
