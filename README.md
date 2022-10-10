@@ -1,4 +1,4 @@
-CS 3311/LMC 3432
+##CS 3311/LMC 3432
 Mobile application implementation by JDF 2356
 - Kyle Fry
 - Zachary (Joe) Wilmot
