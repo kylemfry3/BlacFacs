@@ -1,5 +1,6 @@
-### CS 3311/LMC 3432 ###
-### Mobile application implementation by JDF 2356 ###
+### BlacFacs ###
+## Georgia Institute of Technology 2022-2023 Junior Design Project ##
+## Team JDF 2356 ##
 - Kyle Fry
 - Zachary (Joe) Wilmot
 - Adeja Mann
