@@ -16,6 +16,8 @@ public class SignInHandler : MonoBehaviour
   public Button createAccountButton;
   public TMP_Text emailErrorText;
   public TMP_Text passwordErrorText;
+  public GameObject HomeScreen;
+  public GameObject LoginScreen;
   protected Firebase.Auth.FirebaseAuth auth;
   // Whether to sign in / link or reauthentication *and* fetch user profile data.
   protected bool signInAndFetchProfile = true;
@@ -26,6 +28,8 @@ public class SignInHandler : MonoBehaviour
     auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     signinButton.onClick.AddListener(() => SigninWithEmailAsync());
     createAccountButton.onClick.AddListener(() => SceneManager.LoadScene("SignUpScene"));
+    LoginScreen.SetActive(true);
+    HomeScreen.SetActive(false);
   }
 
   // Sign-in with an email and password.
@@ -55,6 +59,8 @@ public class SignInHandler : MonoBehaviour
     if (LogTaskCompletion(task, "Sign-in"))
     {
       DisplaySignInResult(task.Result, 1);
+      HomeScreen.SetActive(true);
+      LoginScreen.SetActive(false);
     }
   }
 

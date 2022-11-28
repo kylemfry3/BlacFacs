@@ -1162,7 +1162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424963688}
-  - component: {fileID: 424963689}
+  - component: {fileID: 424963690}
   m_Layer: 5
   m_Name: SignInButtonHandler
   m_TagString: Untagged
@@ -1190,7 +1190,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &424963689
+--- !u!114 &424963690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1199,15 +1199,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 424963687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ab3a82b3119c34fae1512f59082227, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f35ffcbfa578495a898abef76775892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id_input: {fileID: 928393979}
-  pw_input: {fileID: 1192162037}
+  emailTextBox: {fileID: 928393980}
+  passwordTextBox: {fileID: 1192162038}
+  signinButton: {fileID: 729662427}
+  createAccountButton: {fileID: 5780046}
+  emailErrorText: {fileID: 109410876}
+  passwordErrorText: {fileID: 109410876}
   HomeScreen: {fileID: 279947667}
   LoginScreen: {fileID: 2084003198}
-  rememberMe: {fileID: 310290200}
-  errmsg: {fileID: 109410875}
 --- !u!1 &452815573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1750,7 @@ GameObject:
   - component: {fileID: 729662429}
   - component: {fileID: 729662428}
   - component: {fileID: 729662427}
+  - component: {fileID: 729662430}
   m_Layer: 5
   m_Name: SignIn_button
   m_TagString: Untagged
@@ -1819,19 +1822,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729662428}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 424963689}
-        m_TargetAssemblyTypeName: SingInButtonClicked, Assembly-CSharp
-        m_MethodName: Signin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &729662428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,6 +1861,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729662424}
   m_CullTransparentMesh: 1
+--- !u!114 &729662430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729662424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ab3a82b3119c34fae1512f59082227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id_input: {fileID: 928393979}
+  pw_input: {fileID: 1192162037}
+  HomeScreen: {fileID: 279947667}
+  LoginScreen: {fileID: 2084003198}
+  rememberMe: {fileID: 310290200}
+  errmsg: {fileID: 109410875}
 --- !u!1 &777127584
 GameObject:
   m_ObjectHideFlags: 0
