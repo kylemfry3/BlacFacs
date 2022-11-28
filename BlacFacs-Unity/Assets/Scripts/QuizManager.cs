@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using static System.Random;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -8,6 +10,7 @@ public class QuizManager : MonoBehaviour {
     public GameObject QuizScreen;
     public GameObject CorrectScreen;
     public GameObject IncorrectScreen;
+    public GameObject HomeScreen;
     public TMP_Text IncorrectAnswerExplanation;
     public TMP_Text CorrectAnswerExplanation;
     public TMP_Text QuizPrompt;
@@ -23,7 +26,7 @@ public class QuizManager : MonoBehaviour {
     public Button IncorrectContinueQuiz;
 
     public string GetAnswersArray(int question, int contentSelector) {
-        string[,] questionBank = new string[5,3];
+        string[,] questionBank = new string[10,3];
         questionBank[0, 0] = "What enslaved woman rose from a humble house servant to one of the most noted and most sought after chefs because of her extravagant multi-course meals?";
         questionBank[0, 1] = "Emeline Jones";
         questionBank[0, 2] = "Emeline Jones was born a slave in the 1830s, but by the 1880s, she had settled in Manhattan and established a prominent catering business. A number of prominent New York chefs trained under her and it is said that Presidents Arthur and Cleveland were so fond of her cooking that each offered her a big salary to serve as White House chef, but she refused.";
@@ -43,14 +46,47 @@ public class QuizManager : MonoBehaviour {
         questionBank[4, 0] = "In what sport did the first African-American, Vonetta Flowers, win a gold medal in the 2002 Winter Olympics?";
         questionBank[4, 1] = "Bobsledding";
         questionBank[4, 2] = "On February 19, 2002, Vonetta Flowers, from Birmingham AL, became the 1st person of African descent to win a Gold Medal in the Winter Olympics; she won hers in bobsledding.";
-    
+
+        questionBank[5,0] = "Who was the first Black woman to earn a PhD in chemistry and serve as a biochemist?";
+        questionBank[5,1] = "Marie Maynard Daly";
+        questionBank[5,2] = "Marie Maynard Daly was an American biochemist and the first Black American woman in the United States to earn a Ph.D. in chemistry.";
+
+        questionBank[6,0] = "Which late music icon was raised by Black Panthers and often rapped about social injustice?";
+        questionBank[6,1] = "Tupac";
+        questionBank[6,2] = "Tupac Shakur’s mother (Afeni Shakur), stepfather (Mutulu Shakur), aunt (Assata Shakur) and godfather (Geronimo Pratt) were all members of the Black Panther Party.";
+
+        questionBank[7,0] = "Who was the very first player to be signed with the Women’s National Basketball Association (WNBA)?";
+        questionBank[7,1] = "Sheryl Swoopes";
+        questionBank[7,2] = "On October 23, 1996 Houston Comets forward Sheryl Swoopes became the first player to sign with the WNBA.";
+
+        questionBank[8,0] = "The assassination of what important figure is often said to have launched the Black Arts Movement?";
+        questionBank[8,1] = "Malcom X";
+        questionBank[8,2] = "The assassination of Black nationalist figure, Malcolm X, in 1965 is often associated with the beginning of both the Black Arts and Black Power Movements.";
+
+        questionBank[9,0] = "During the early 1800s, enslaved Blacks escaped to Florida and along with Native Americans established a thriving settlement which was later destroyed and hundreds of people killed. Who were the culprits in this destruction?";
+        questionBank[9,1] = "The United States";
+        questionBank[9,2] = "On a portion of the Spanish territory of Florida near the Apalachicola River, a community of escaped slaves and Native Americans developed Fort Negro with the help of the British. Because it was heavily armed, the U.S. government and other southern states feared an uprising to free southern slaves would soon take place and in 1816 the U.S. government destroyed the settlement, killing over 200 of the 1000 inhabitants.";
+
         return questionBank[question, contentSelector];
     }
 
-    int i = -1;
+    int i;
+    ArrayList questionsAsked = new ArrayList();
+    int questionCount = 0;
+    System.Random rand = new System.Random();
 
     void Start() {
-        i++;
+        if (questionCount >= 10) {
+            HomeScreen.SetActive(true);
+        } else {
+        i = rand.Next(10);
+        bool isInArray = questionsAsked.Contains(i);
+        while (isInArray) {
+            i = rand.Next(10);
+            isInArray = questionsAsked.Contains(i);
+        }
+        questionsAsked.Add(i);
+
         QuizScreen.SetActive(true);
         CorrectScreen.SetActive(false);
         IncorrectScreen.SetActive(false);
@@ -76,7 +112,10 @@ public class QuizManager : MonoBehaviour {
         incorrect_continue.onClick.AddListener(Start);
 
         Button correct_continue = CorrectContinueQuiz.GetComponent<Button>();
-        correct_continue.onClick.AddListener(Start); 
+        correct_continue.onClick.AddListener(Start);
+
+        questionCount++;
+        }
     }
 
     void AnswerChoice1() {
