@@ -27,8 +27,9 @@ BlacFacs is a study-based learning application that teaches Black history and cu
 3. Open Unity Hub and select "Open Project" and navigate to the cloned repository. Select "BlacFacs-Unity" as the project directory.
 4. Unity will now import the project.
 5. Go to Project Settings via (File > Build Settings) and change the build type to iOS
-6. If not present in the Assets folder, ensure the BlacFacs Google Play Services .plist and .json files exist in the directory
-7. If not present in the Unity build, download the Firebase Unity SDK (https://firebase.google.com/download/unity) and unzip it.
-8. Import the Firebase Auth Unity Package by going to (Assets > Import Package > Custom Package > firebase_unity_sdk folder > FirebaseAuth.unitypackage)
-9. After importing, give it a second for all the scripts to compile and set in place.
+6. Change the Product Name (default com.CompanyName) to "com.thirdeyeproductions.blacfacs". !!! FAILURE TO DO THIS WONT MAKE LOGIN WORK !!!
+7. If not present in the Assets folder, ensure the BlacFacs Google Play Services .plist and .json files exist in the directory.
+8. If not present in the Unity build, download the Firebase Unity SDK (https://firebase.google.com/download/unity) and unzip it.
+9. Import the Firebase Auth Unity Package by going to (Assets > Import Package > Custom Package > firebase_unity_sdk folder > FirebaseAuth.unitypackage)
+10. After importing, give it a second for all the scripts to compile and set in place.
 
