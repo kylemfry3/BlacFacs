@@ -10,13 +10,16 @@ public class SingInButtonClicked : MonoBehaviour
 {
     public GameObject id_input;
     public GameObject pw_input;
+    public GameObject HomeScreen;
+    public GameObject LoginScreen;
     public Toggle rememberMe;
     private string id, pw;
     public GameObject errmsg;
     // Start is called before the first frame update
     void Start()
     {
-        
+        LoginScreen.SetActive(true);
+        HomeScreen.SetActive(false);
         //pw = pw.GetComponent<InputField>();
 
 
@@ -47,7 +50,9 @@ public class SingInButtonClicked : MonoBehaviour
                 UserInfoManager user_manager = uim.GetComponent<UserInfoManager>();
                 user_manager.setID(id);
                 user_manager.setPW(pw);
-                SceneManager.LoadScene("HomePage");
+                //SceneManager.LoadScene("HomePage");
+                HomeScreen.SetActive(true);
+                LoginScreen.SetActive(false);
             }
             else
             {
