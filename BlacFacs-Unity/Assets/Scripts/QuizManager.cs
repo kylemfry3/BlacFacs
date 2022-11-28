@@ -11,8 +11,8 @@ public class QuizManager : MonoBehaviour {
     public GameObject CorrectScreen;
     public GameObject IncorrectScreen;
     public GameObject HomeScreen;
+    public GameObject Notice;
     public TMP_Text IncorrectAnswerExplanation;
-    public TMP_Text CorrectAnswerExplanation;
     public TMP_Text QuizPrompt;
     public Button Choice1;
     public TMP_Text Choice1Text;
@@ -72,12 +72,13 @@ public class QuizManager : MonoBehaviour {
 
     int i;
     ArrayList questionsAsked = new ArrayList();
-    int questionCount = 0;
+    public int pointCount = 0;
     System.Random rand = new System.Random();
 
     void Start() {
-        if (questionCount >= 10) {
+        if (pointCount >= 10) {
             HomeScreen.SetActive(true);
+            Notice.SetActive(true);
         } else {
         i = rand.Next(10);
         bool isInArray = questionsAsked.Contains(i);
@@ -85,7 +86,6 @@ public class QuizManager : MonoBehaviour {
             i = rand.Next(10);
             isInArray = questionsAsked.Contains(i);
         }
-        questionsAsked.Add(i);
 
         QuizScreen.SetActive(true);
         CorrectScreen.SetActive(false);
@@ -114,7 +114,8 @@ public class QuizManager : MonoBehaviour {
         Button correct_continue = CorrectContinueQuiz.GetComponent<Button>();
         correct_continue.onClick.AddListener(Start);
 
-        questionCount++;
+        pointCount++;
+        questionsAsked.Add(i);
         }
     }
 
@@ -122,7 +123,6 @@ public class QuizManager : MonoBehaviour {
         string answer = GetAnswersArray(i, 1);
         if (answer.Equals(Choice1Text.text)) {
             CorrectScreen.SetActive(true);
-            CorrectAnswerExplanation.text = GetAnswersArray(i, 2);
         } else {
             IncorrectScreen.SetActive(true);
             IncorrectAnswerExplanation.text = GetAnswersArray(i, 2);
@@ -133,7 +133,6 @@ public class QuizManager : MonoBehaviour {
         string answer = GetAnswersArray(i, 1);
         if (answer.Equals(Choice2Text.text)) {
             CorrectScreen.SetActive(true);
-            CorrectAnswerExplanation.text = GetAnswersArray(i, 2);
         } else {
             IncorrectScreen.SetActive(true);
             IncorrectAnswerExplanation.text = GetAnswersArray(i, 2);
@@ -144,7 +143,6 @@ public class QuizManager : MonoBehaviour {
         string answer = GetAnswersArray(i, 1);
         if (answer.Equals(Choice3Text.text)) {
             CorrectScreen.SetActive(true);
-            CorrectAnswerExplanation.text = GetAnswersArray(i, 2);
         } else {
             IncorrectScreen.SetActive(true);
             IncorrectAnswerExplanation.text = GetAnswersArray(i, 2);
@@ -155,7 +153,6 @@ public class QuizManager : MonoBehaviour {
         string answer = GetAnswersArray(i, 1);
         if (answer.Equals(Choice4Text.text)) {
             CorrectScreen.SetActive(true);
-            CorrectAnswerExplanation.text = GetAnswersArray(i, 2);
         } else {
             IncorrectScreen.SetActive(true);
             IncorrectAnswerExplanation.text = GetAnswersArray(i, 2);
