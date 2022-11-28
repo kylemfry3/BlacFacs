@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "222694170799",
+    "project_id": "blacfacs",
+    "storage_bucket": "blacfacs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222694170799:android:90aa6b8b3e8405047cb45a",
+        "android_client_info": {
+          "package_name": "com.thirdeyeproductions.blacfacs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222694170799-f4dr8u7ip2u4qffraehal066n512p2tr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhYhXLM_K6CSc0gxsZ14TYj1md04Nhlj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222694170799-f4dr8u7ip2u4qffraehal066n512p2tr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "222694170799-ro55l87h98g8v6fcs093vgv1uh547sfc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.thirdeyeproductions.blacfacs"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
