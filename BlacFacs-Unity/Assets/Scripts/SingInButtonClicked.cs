@@ -70,7 +70,7 @@ public class SingInButtonClicked : MonoBehaviour
         //using id, find user id first in our DB. ex) SELECT * FROM users WHERE id = id
         //if the length of the above query is one, continue. else, return False (the user hasn't signed up)
         Highlight(id_input);
-        return false;
+        return true;
     }
 
     //using pw, check if the pw is matched with the id. ex) SELECT * FROM users WEHRE id = id AND pw = pw
@@ -78,7 +78,7 @@ public class SingInButtonClicked : MonoBehaviour
     private bool MatchPW(string id, string pw)
     {
         Highlight(pw_input);
-        return false;
+        return true;
     }
     private void Highlight(GameObject target)
     {
