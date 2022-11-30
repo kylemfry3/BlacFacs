@@ -12,6 +12,8 @@ public class QuizManager : MonoBehaviour {
     public GameObject IncorrectScreen;
     public GameObject HomeScreen;
     public GameObject Notice;
+    public GameObject Flag;
+
     public TMP_Text IncorrectAnswerExplanation;
     public TMP_Text QuizPrompt;
     public Button Choice1;
@@ -77,6 +79,7 @@ public class QuizManager : MonoBehaviour {
 
     void Start() {
         if (pointCount >= 10) {
+            Flag.SetActive(true);
             HomeScreen.SetActive(true);
             Notice.SetActive(true);
         } else {

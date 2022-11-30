@@ -9,6 +9,9 @@ public class DailyQuiz : MonoBehaviour {
 	public Button dailyQuizStart;
     public GameObject HomeScreen;
 	public GameObject QuizStartPage;
+    public GameObject QOTD_Complete_Flag;
+    public GameObject QOTD_Notice;
+
 
     void Start() {
         Button btn = dailyQuizStart.GetComponent<Button>();
@@ -16,7 +19,11 @@ public class DailyQuiz : MonoBehaviour {
     }
 
     void TaskOnClick() {
-        HomeScreen.SetActive(false);
-        QuizStartPage.SetActive(true);
+        if (QOTD_Complete_Flag.activeSelf) {
+            QOTD_Notice.SetActive(true);
+        } else {
+            HomeScreen.SetActive(false);
+            QuizStartPage.SetActive(true);
+        }
     }
 }
